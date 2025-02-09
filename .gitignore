@@ -1,0 +1,17 @@
+*.log
+*.log.temp
+*.cmd
+
+# Mac cache
+.DS_Store
+
+# version grab
+.comfyui_version
+
+# generation directories
+data/*
+HF/*
+models/*
+user/*
+
+run/*
