@@ -55,6 +55,9 @@ RUN apt-get update -y --fix-missing \
     ffmpeg \
   && apt-get clean
 
+# Install InsightFace system-wide
+RUN pip install --no-cache-dir --break-system-packages insightface
+
 ENV BUILD_FILE="/etc/image_base.txt"
 ARG BASE_DOCKER_FROM
 RUN echo "DOCKER_FROM: ${BASE_DOCKER_FROM}" | tee ${BUILD_FILE}
@@ -86,3 +89,4 @@ ARG BUILD_DATE="unknown"
 LABEL comfyui-nvidia-docker-build=${BUILD_DATE}
 
 CMD [ "./comfyui-nvidia_init.bash" ]
+
